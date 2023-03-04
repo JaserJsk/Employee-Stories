@@ -1,17 +1,19 @@
 import { Grid } from "@mui/material";
-import EmployeeMedia from "../components/EmployeeMedia";
-import { Employee } from "../types/Employee";
+import CardViews from "../components/CardViews";
+import { EmployeeData } from "../types/Employee";
 
 function EmployeeList({
   employees,
   currentPage,
   employeesPerPage,
   viewMode,
+  onEmployeeSelect,
 }: {
-  employees: Employee[];
+  employees: EmployeeData[];
   currentPage: number;
   employeesPerPage: number;
   viewMode: "grid" | "list";
+  onEmployeeSelect: (employee: EmployeeData) => void;
 }) {
   const indexOfLastEmployee = currentPage * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
@@ -24,7 +26,11 @@ function EmployeeList({
     <Grid container spacing={4}>
       {currentEmployees.map((employee) => (
         <Grid item key={employee.name} xs={12} sm={6} md={3}>
-          <EmployeeMedia employee={employee} viewMode={viewMode} />
+          <CardViews
+            employees={employee}
+            viewMode={viewMode}
+            onEmployeeSelect={onEmployeeSelect}
+          />
         </Grid>
       ))}
     </Grid>

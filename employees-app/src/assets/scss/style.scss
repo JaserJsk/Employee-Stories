@@ -1,4 +1,4 @@
-/* EmployeeMedia */
+/* CardViews */
 .grid-view {
   display: flex;
   flex-direction: column;
@@ -27,6 +27,10 @@
 
   .card-content {
     flex-grow: 1;
+
+    &:last-child {
+      padding-bottom: 16px;
+    }
   }
 }
 
@@ -48,6 +52,11 @@
 
     .content {
       flex-grow: 1;
+
+      > :last-child {
+        bottom: 10px;
+        position: absolute;
+      }
     }
   }
 
@@ -68,6 +77,69 @@
 
         .icon {
           color: grey.500;
+        }
+      }
+    }
+  }
+}
+
+/* PagePagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+/* CardSingle */
+.single-view {
+  margin: 0 auto;
+
+  .card-image {
+    width: 100%;
+    max-width: 600px;
+    align-self: center;
+  }
+
+  .content {
+    padding-left: 16px;
+
+    .contact {
+      margin-top: 32px;
+      justify-content: space-between;
+
+      .left-grid {
+        margin-left: auto;
+
+        .icon-button {
+          display: block;
+
+          @media only screen and (min-width: 600px) {
+            display: none;
+          }
+
+          icon {
+            color: grey.500;
+          }
+        }
+
+        .social-section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          @media only screen and (min-width: 600px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+          }
+
+          .social-icons {
+            display: none;
+
+            @media only screen and (min-width: 600px) {
+              display: block;
+            }
+          }
         }
       }
     }

@@ -13,7 +13,7 @@ function PagePagination({
 }) {
   const totalPages = Math.ceil(totalEmployees / employeesPerPage);
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", pt: 4 }}>
+    <Box className="pagination">
       <Pagination
         count={totalPages}
         page={currentPage}

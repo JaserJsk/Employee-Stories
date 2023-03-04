@@ -1,4 +1,3 @@
-import { MoreVert } from "@mui/icons-material";
 import {
   Box,
   Card,
@@ -11,15 +10,18 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { Employee } from "../types/Employee";
+import { EmployeeData } from "../types/Employee";
 import { menuItems } from "../menu/MenuItems";
+import { MoreVert } from "@mui/icons-material";
 
-function EmployeeMedia({
-  employee,
+function CardViews({
+  employees: employee,
   viewMode,
+  onEmployeeSelect,
 }: {
-  employee: Employee;
+  employees: EmployeeData;
   viewMode: "grid" | "list";
+  onEmployeeSelect: (employee: EmployeeData) => void;
 }) {
   const { name, office, email, phoneNumber, imagePortraitUrl } = employee;
 
@@ -33,6 +35,10 @@ function EmployeeMedia({
     setAnchorEl(null);
   };
 
+  const handleEmployeeClick = () => {
+    onEmployeeSelect(employee);
+  };
+
   if (viewMode === "grid") {
     return (
       <Card className="grid-view">
@@ -41,6 +47,7 @@ function EmployeeMedia({
           image={imagePortraitUrl}
           alt={name}
           className="card-image"
+          onClick={handleEmployeeClick}
         />
         <Box className="card-header">
           <Typography variant="overline">{name}</Typography>
@@ -82,9 +89,8 @@ function EmployeeMedia({
       <Container>
         <Card
           className="list-view"
-          sx={{
-            width: viewMode === "list" ? "100%" : "auto",
-          }}
+          sx={{ width: viewMode === "list" ? "100%" : "auto" }}
+          onClick={handleEmployeeClick}
         >
           <CardMedia
             component="img"
@@ -137,4 +143,4 @@ function EmployeeMedia({
   }
 }
 
-export default EmployeeMedia;
+export default CardViews;

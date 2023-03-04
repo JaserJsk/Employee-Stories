@@ -12,11 +12,11 @@ import axios from "axios";
 import Hero from "./components/Hero";
 import Company from "./views/Company";
 import Footer from "./components/Footer";
-import { Employee } from "./types/Employee";
+import { EmployeeData } from "./types/Employee";
 import MainTheme from "./themes/MainTheme";
 
 function App() {
-  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [employees, setEmployees] = useState<EmployeeData[]>([]);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   useEffect(() => {
