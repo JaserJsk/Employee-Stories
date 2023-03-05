@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from "react";
 import { Box, Container, List, ListItem, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 import { EmployeeData, AllEmployeesProps } from "../types/Employee";
 import PagePagination from "../helpers/Pagination";
 import EmployeeList from "./EmployeeList";

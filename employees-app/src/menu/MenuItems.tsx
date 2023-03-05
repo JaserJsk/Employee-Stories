@@ -1,3 +1,4 @@
+import React from "react";
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 
 export const menuItems = [

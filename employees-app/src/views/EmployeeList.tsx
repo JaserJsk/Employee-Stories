@@ -1,3 +1,4 @@
+import React from "react";
 import { Grid } from "@mui/material";
 import CardViews from "../components/CardViews";
 import { EmployeeData } from "../types/Employee";
