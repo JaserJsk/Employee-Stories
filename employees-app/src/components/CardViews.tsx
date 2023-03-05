@@ -50,7 +50,9 @@ function CardViews({
           onClick={handleEmployeeClick}
         />
         <Box className="card-header">
-          <Typography variant="overline">{name}</Typography>
+          <Typography variant="h5" color="primary.main">
+            {name}
+          </Typography>
           <Box className="menu-btn">
             <IconButton onClick={handleClick} size="small">
               <MoreVert className="icon" />
@@ -72,7 +74,7 @@ function CardViews({
                     rel="noopener noreferrer"
                   >
                     {item.icon}
-                    {item.label}
+                    <span style={{ marginLeft: "8px" }}>{item.label}</span>
                   </MenuItem>
                 ) : null;
               })}
@@ -80,7 +82,9 @@ function CardViews({
           </Box>
         </Box>
         <CardContent className="card-content">
-          <Typography variant="overline">Office: {office}</Typography>
+          <Typography variant="subtitle1" color="text.primary" gutterBottom>
+            Office: {office}
+          </Typography>
         </CardContent>
       </Card>
     );
@@ -90,20 +94,28 @@ function CardViews({
         <Card
           className="list-view"
           sx={{ width: viewMode === "list" ? "100%" : "auto" }}
-          onClick={handleEmployeeClick}
         >
           <CardMedia
             component="img"
             image={imagePortraitUrl}
             alt={name}
             className="card-image"
+            onClick={handleEmployeeClick}
           />
           <Box className="card-header">
             <Box className="content">
-              <Typography variant="overline">{name}</Typography>
-              <Typography variant="body2">{email}</Typography>
-              <Typography variant="body2">{phoneNumber}</Typography>
-              <Typography variant="overline">{office}</Typography>
+              <Typography variant="h6" color="primary.main">
+                {name}
+              </Typography>
+              <Typography variant="subtitle2" color="text.primary">
+                {email}
+              </Typography>
+              <Typography variant="subtitle2" color="text.primary">
+                {phoneNumber}
+              </Typography>
+              <Typography variant="subtitle1" color="text.primary">
+                {office}
+              </Typography>
             </Box>
           </Box>
           <CardContent className="card-content">
@@ -129,7 +141,7 @@ function CardViews({
                         rel="noopener noreferrer"
                       >
                         {item.icon}
-                        {item.label}
+                        <span style={{ marginLeft: "8px" }}>{item.label}</span>
                       </MenuItem>
                     ) : null;
                   })}

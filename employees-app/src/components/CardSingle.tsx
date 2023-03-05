@@ -13,13 +13,13 @@ import {
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { SingleEmployeeProps } from "../types/Employee";
-import { MoreVert } from "@mui/icons-material";
+import { Place, Email, Phone, MoreVert } from "@mui/icons-material";
 import { menuItems } from "../menu/MenuItems";
 
 const CardSingle: React.FC<
   SingleEmployeeProps & { onBackClick: () => void }
 > = ({ employee, onBackClick }) => {
-  const { name, office, email, phoneNumber, mainText, imagePortraitUrl } =
+  const { name, office, email, phoneNumber, mainText, imageWallOfLeetUrl } =
     employee;
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -36,7 +36,7 @@ const CardSingle: React.FC<
     <Card className="single-view">
       <CardHeader
         title={
-          <IconButton onClick={onBackClick}>
+          <IconButton color="secondary" onClick={onBackClick}>
             <ArrowBackIcon />
           </IconButton>
         }
@@ -46,47 +46,63 @@ const CardSingle: React.FC<
           <Grid item xs={12} sm={4} md={3}>
             <CardMedia
               component="img"
-              image={imagePortraitUrl}
+              image={imageWallOfLeetUrl}
               alt={name}
               className="card-image"
             />
           </Grid>
           <Grid item xs={12} sm={8} md={9} className="content">
-            <Typography variant="h4" component="div" gutterBottom>
+            <Typography variant="h4" color="primary.main" gutterBottom>
               {name}
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" gutterBottom>
-              Office: {office}
-            </Typography>
-            <Typography variant="body1" paragraph>
+            <Grid container spacing={1}>
+              <Grid item>
+                <Place color="secondary" />
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="subtitle1"
+                  color="text.primary"
+                  className="subtitle1"
+                  gutterBottom
+                >
+                  Office: {office}
+                </Typography>
+              </Grid>
+            </Grid>
+            <Typography variant="body1" color="text.primary" paragraph>
               {mainText?.replace(/<\/?p>/g, "")}
             </Typography>
-            {/* C */}
-            <Grid container spacing={2} className="contact">
+            <Grid container spacing={1} className="contact">
               <Grid item>
-                <Typography variant="subtitle2" color="text.secondary">
-                  Email:
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  {email}
+                <Email color="secondary" />
+              </Grid>
+              <Grid item>
+                <Typography variant="subtitle2" color="text.primary">
+                  <a
+                    href={`mailto:${email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {email}
+                  </a>
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography variant="subtitle2" color="text.secondary">
-                  Phone:
-                </Typography>
-                <Typography variant="body2" gutterBottom>
+                <Phone color="secondary" />
+              </Grid>
+              <Grid item>
+                <Typography variant="subtitle2" color="text.primary">
                   {phoneNumber}
                 </Typography>
               </Grid>
-              {/* V */}
               <Grid item className="left-grid">
                 <IconButton
                   onClick={handleClick}
                   size="small"
-                  className="icon-button"
+                  className="icon-btn"
                 >
-                  <MoreVert className="icon" />
+                  <MoreVert />
                 </IconButton>
                 <Box className="social-section">
                   {menuItems.map((item) => {
@@ -123,15 +139,13 @@ const CardSingle: React.FC<
                         rel="noopener noreferrer"
                       >
                         {item.icon}
-                        {item.label}
+                        <span style={{ marginLeft: "8px" }}>{item.label}</span>
                       </MenuItem>
                     ) : null;
                   })}
                 </Menu>
               </Grid>
-              {/* V */}
             </Grid>
-            {/* C */}
           </Grid>
         </Grid>
       </CardContent>

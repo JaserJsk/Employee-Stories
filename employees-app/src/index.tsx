@@ -6,6 +6,24 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./assets/scss/style.scss";
 
+const regular = document.createElement("link");
+regular.rel = "stylesheet";
+regular.href =
+  "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap";
+document.head.appendChild(regular);
+
+const medium = document.createElement("link");
+medium.rel = "stylesheet";
+medium.href =
+  "https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap";
+document.head.appendChild(medium);
+
+const italic = document.createElement("link");
+italic.rel = "stylesheet";
+italic.href =
+  "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap";
+document.head.appendChild(italic);
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

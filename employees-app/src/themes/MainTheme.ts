@@ -10,12 +10,15 @@ const colors = {
   white: "#ffffff",
   paper: "#f7f7f7",
   primary: "#3f51b5",
-  secondary: "#f50057",
+  secondary: "#ff1744",
   textPrimary: "#222222",
   textSecondary: "#555555",
 };
 
 const MainTheme = createTheme({
+  typography: {
+    fontFamily: "'Ubuntu', sans-serif",
+  },
   palette: {
     mode: "light",
     background: {
@@ -83,31 +86,6 @@ const MainTheme = createTheme({
         },
       },
     },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          color: "text.primary",
-        },
-        h1: {
-          color: "text.primary",
-        },
-        h2: {
-          color: "text.primary",
-        },
-        h3: {
-          color: "text.primary",
-        },
-        h4: {
-          color: "text.primary",
-        },
-        h5: {
-          color: "text.primary",
-        },
-        h6: {
-          color: "text.primary",
-        },
-      },
-    },
     MuiLink: {
       styleOverrides: {
         root: {
@@ -115,6 +93,13 @@ const MainTheme = createTheme({
           "&:hover": {
             color: "secondary.highContrast",
           },
+        },
+      },
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          marginRight: "0 !important",
         },
       },
     },
