@@ -12,9 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import { SingleEmployeeProps } from "../types/Employee";
-import { Place, Email, Phone, MoreVert } from "@mui/icons-material";
+import { ArrowBack, Place, Email, Phone, MoreVert } from "@mui/icons-material";
 import { menuItems } from "../menu/MenuItems";
-import { ArrowBack } from "@mui/icons-material";
 
 const CardSingle: React.FC<
   SingleEmployeeProps & { onBackClick: () => void }
