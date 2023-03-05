@@ -10,6 +10,9 @@ export const menuItems = [
           marginRight: 1,
           "&:hover": { color: "secondary.main" },
         }}
+        aria-label="linkedin-icon"
+        aria-hidden="false"
+        role="button"
       />
     ),
     getUrl: (employee: { linkedIn?: string }) =>
@@ -25,6 +28,9 @@ export const menuItems = [
           marginRight: 1,
           "&:hover": { color: "secondary.main" },
         }}
+        aria-label="github-icon"
+        aria-hidden="false"
+        role="button"
       />
     ),
     getUrl: (employee: { gitHub?: string }) =>
@@ -40,6 +46,9 @@ export const menuItems = [
           marginRight: 1,
           "&:hover": { color: "secondary.main" },
         }}
+        aria-label="twitter-icon"
+        aria-hidden="false"
+        role="button"
       />
     ),
     getUrl: (employee: { twitter?: string }) =>

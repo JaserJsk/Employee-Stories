@@ -45,7 +45,7 @@ function CardViews({
         <CardMedia
           component="img"
           image={imagePortraitUrl}
-          alt={name}
+          alt=""
           className="card-image"
           onClick={handleEmployeeClick}
         />
@@ -54,8 +54,13 @@ function CardViews({
             {name}
           </Typography>
           <Box className="menu-btn">
-            <IconButton onClick={handleClick} size="small">
-              <MoreVert className="icon" />
+            <IconButton
+              onClick={handleClick}
+              size="small"
+              aria-label="social-icons"
+              role="button"
+            >
+              <MoreVert className="icon" aria-hidden="true" />
             </IconButton>
             <Menu
               anchorEl={anchorEl}
@@ -98,7 +103,7 @@ function CardViews({
           <CardMedia
             component="img"
             image={imagePortraitUrl}
-            alt={name}
+            alt=""
             className="card-image"
             onClick={handleEmployeeClick}
           />
@@ -121,8 +126,13 @@ function CardViews({
           <CardContent className="card-content">
             <Box className="content">
               <Box className="menu-btn">
-                <IconButton onClick={handleClick} size="small">
-                  <MoreVert className="icon" />
+                <IconButton
+                  onClick={handleClick}
+                  size="small"
+                  aria-label="social-icons"
+                  role="button"
+                >
+                  <MoreVert className="icon" aria-hidden="true" />
                 </IconButton>
                 <Menu
                   anchorEl={anchorEl}

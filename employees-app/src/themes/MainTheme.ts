@@ -9,8 +9,8 @@ const colors = {
   black: "#000000",
   white: "#ffffff",
   paper: "#f7f7f7",
-  primary: "#3f51b5",
-  secondary: "#ff1744",
+  primary: "#235789",
+  secondary: "#AD0022",
   textPrimary: "#222222",
   textSecondary: "#555555",
 };

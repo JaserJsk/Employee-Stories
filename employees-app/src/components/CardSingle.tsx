@@ -37,7 +37,11 @@ const CardSingle: React.FC<
       <CardHeader
         title={
           <IconButton color="secondary" onClick={onBackClick}>
-            <ArrowBackIcon />
+            <ArrowBackIcon
+              aria-label="back-icon"
+              aria-hidden="false"
+              role="button"
+            />
           </IconButton>
         }
       />
@@ -47,7 +51,7 @@ const CardSingle: React.FC<
             <CardMedia
               component="img"
               image={imageWallOfLeetUrl}
-              alt={name}
+              alt=""
               className="card-image"
             />
           </Grid>
@@ -57,11 +61,11 @@ const CardSingle: React.FC<
             </Typography>
             <Grid container spacing={1}>
               <Grid item>
-                <Place color="secondary" />
+                <Place color="secondary" aria-hidden="true" />
               </Grid>
               <Grid item>
                 <Typography
-                  variant="subtitle1"
+                  variant="h5"
                   color="text.primary"
                   className="subtitle1"
                   gutterBottom
@@ -75,7 +79,7 @@ const CardSingle: React.FC<
             </Typography>
             <Grid container spacing={1} className="contact">
               <Grid item>
-                <Email color="secondary" />
+                <Email color="secondary" aria-hidden="true" />
               </Grid>
               <Grid item>
                 <Typography variant="subtitle2" color="text.primary">
@@ -89,7 +93,7 @@ const CardSingle: React.FC<
                 </Typography>
               </Grid>
               <Grid item>
-                <Phone color="secondary" />
+                <Phone color="secondary" aria-hidden="true" />
               </Grid>
               <Grid item>
                 <Typography variant="subtitle2" color="text.primary">
@@ -101,8 +105,10 @@ const CardSingle: React.FC<
                   onClick={handleClick}
                   size="small"
                   className="icon-btn"
+                  aria-label="social-icons"
+                  role="button"
                 >
-                  <MoreVert />
+                  <MoreVert aria-hidden="true" />
                 </IconButton>
                 <Box className="social-section">
                   {menuItems.map((item) => {

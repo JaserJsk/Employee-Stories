@@ -46,11 +46,13 @@ function App() {
           </Typography>
           <IconButton
             color="inherit"
-            aria-label="toggle view mode"
             onClick={toggleViewMode}
             sx={{ marginLeft: "auto" }}
+            aria-label="toggle view mode"
+            aria-hidden="false"
+            role="button"
           >
-            <List />
+            <List aria-hidden="true" />
           </IconButton>
         </Toolbar>
       </AppBar>
