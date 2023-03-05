@@ -11,17 +11,14 @@ import {
   MenuItem,
   Typography,
 } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { SingleEmployeeProps } from "../types/Employee";
 import { Place, Email, Phone, MoreVert } from "@mui/icons-material";
 import { menuItems } from "../menu/MenuItems";
+import { ArrowBack } from "@mui/icons-material";
 
 const CardSingle: React.FC<
   SingleEmployeeProps & { onBackClick: () => void }
 > = ({ employee, onBackClick }) => {
-  const { name, office, email, phoneNumber, mainText, imageWallOfLeetUrl } =
-    employee;
-
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,13 +29,16 @@ const CardSingle: React.FC<
     setAnchorEl(null);
   };
 
+  const { name, office, email, phoneNumber, mainText, imageWallOfLeetUrl } =
+    employee;
+
   return (
     <Card className="single-view">
       <CardHeader
         title={
           <IconButton color="secondary" onClick={onBackClick}>
-            <ArrowBackIcon
-              aria-label="back-icon"
+            <ArrowBack
+              aria-label="Back Icon"
               aria-hidden="false"
               role="button"
             />
@@ -105,7 +105,7 @@ const CardSingle: React.FC<
                   onClick={handleClick}
                   size="small"
                   className="icon-btn"
-                  aria-label="social-icons"
+                  aria-label="Social Icons"
                   role="button"
                 >
                   <MoreVert aria-hidden="true" />

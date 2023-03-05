@@ -1,14 +1,17 @@
-import { Box, Container, List, ListItem } from "@mui/material";
+import { Box, Container, List, ListItem, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { EmployeeData, AllEmployeesProps } from "../types/Employee";
 import PagePagination from "../helpers/Pagination";
 import EmployeeList from "./EmployeeList";
 import CardViews from "../components/CardViews";
 import CardSingle from "../components/CardSingle";
+import FilterSearch from "../components/FilterSearch";
+import FilterHelper from "../helpers/FilterHelper";
 
 function Company({
-  employees,
+  employees: allEmployees,
   viewMode,
+  toggleViewMode,
 }: AllEmployeesProps & {
   viewMode: "grid" | "list";
   toggleViewMode: () => void;
@@ -19,7 +22,9 @@ function Company({
     null
   );
   const [showCardViews, setShowCardViews] = useState<boolean>(true);
-
+  const [filteredEmployees, setFilteredEmployees] = useState<EmployeeData[]>(
+    []
+  );
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
     page: number
@@ -37,6 +42,22 @@ function Company({
     setShowCardViews(true);
   };
 
+  const handleFilter = (filteredEmployees: EmployeeData[]) => {
+    setFilteredEmployees(filteredEmployees);
+    setCurrentPage(1);
+  };
+
+  useEffect(() => {
+    // Perform initial filter when page is mounted
+    const filteredEmployees = FilterHelper.filterBy(
+      allEmployees,
+      "name",
+      "Ascending",
+      ""
+    );
+    setFilteredEmployees(filteredEmployees);
+  }, [allEmployees]);
+
   useEffect(() => {
     if (viewMode === "list") {
       setEmployeesPerPage(8);
@@ -46,9 +67,18 @@ function Company({
   return (
     <Box sx={{ bgcolor: "background.paper", py: 8 }}>
       <Container maxWidth="xl">
-        {showCardViews && viewMode === "grid" ? (
+        {showCardViews && (
+          <FilterSearch employees={allEmployees} onFilter={handleFilter} />
+        )}
+        {filteredEmployees.length === 0 ? (
+          <Box sx={{ my: 30 }}>
+            <Typography variant="h4" align="center" color="text.primary">
+              There is nothing here!
+            </Typography>
+          </Box>
+        ) : showCardViews && viewMode === "grid" ? (
           <EmployeeList
-            employees={employees}
+            employees={filteredEmployees}
             currentPage={currentPage}
             employeesPerPage={employeesPerPage}
             viewMode={viewMode}
@@ -56,7 +86,7 @@ function Company({
           />
         ) : showCardViews && viewMode === "list" ? (
           <List>
-            {employees
+            {filteredEmployees
               .slice(
                 (currentPage - 1) * employeesPerPage,
                 currentPage * employeesPerPage
@@ -81,7 +111,7 @@ function Company({
           <PagePagination
             currentPage={currentPage}
             employeesPerPage={employeesPerPage}
-            totalEmployees={employees.length}
+            totalEmployees={filteredEmployees.length}
             onPageChange={handlePageChange}
           />
         )}

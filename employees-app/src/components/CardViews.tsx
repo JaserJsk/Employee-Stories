@@ -57,7 +57,7 @@ function CardViews({
             <IconButton
               onClick={handleClick}
               size="small"
-              aria-label="social-icons"
+              aria-label="Social Icons"
               role="button"
             >
               <MoreVert className="icon" aria-hidden="true" />
@@ -129,7 +129,7 @@ function CardViews({
                 <IconButton
                   onClick={handleClick}
                   size="small"
-                  aria-label="social-icons"
+                  aria-label="Social Icons"
                   role="button"
                 >
                   <MoreVert className="icon" aria-hidden="true" />

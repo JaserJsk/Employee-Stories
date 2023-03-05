@@ -1,9 +1,14 @@
+html {
+  background-color: #f7f7f7;
+}
+
 /* CardViews */
 .grid-view {
   display: flex;
   flex-direction: column;
 
   .card-image {
+    object-fit: fill;
     aspect-ratio: 4/3;
   }
 
@@ -39,9 +44,10 @@
   flex-direction: row;
 
   .card-image {
-    aspect-ratio: 4/3;
     width: 200px;
     height: 150px;
+    object-fit: fill;
+    aspect-ratio: 4/3;
   }
 
   .card-header {

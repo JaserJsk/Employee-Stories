@@ -10,7 +10,7 @@ export const menuItems = [
           marginRight: 1,
           "&:hover": { color: "secondary.main" },
         }}
-        aria-label="linkedin-icon"
+        aria-label="Linkedin Icon"
         aria-hidden="false"
         role="button"
       />
@@ -28,7 +28,7 @@ export const menuItems = [
           marginRight: 1,
           "&:hover": { color: "secondary.main" },
         }}
-        aria-label="github-icon"
+        aria-label="Github Icon"
         aria-hidden="false"
         role="button"
       />
@@ -46,7 +46,7 @@ export const menuItems = [
           marginRight: 1,
           "&:hover": { color: "secondary.main" },
         }}
-        aria-label="twitter-icon"
+        aria-label="Twitter Icon"
         aria-hidden="false"
         role="button"
       />

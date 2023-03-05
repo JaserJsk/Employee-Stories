@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { Code, List } from "@mui/icons-material";
 import axios from "axios";
-import Hero from "./components/Hero";
 import Company from "./views/Company";
 import Footer from "./components/Footer";
 import { EmployeeData } from "./types/Employee";
@@ -41,14 +40,14 @@ function App() {
       <AppBar position="relative">
         <Toolbar>
           <Code sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
+          <Typography variant="inherit" color="inherit" noWrap>
             The fellowship of the Tretton37
           </Typography>
           <IconButton
             color="inherit"
             onClick={toggleViewMode}
             sx={{ marginLeft: "auto" }}
-            aria-label="toggle view mode"
+            aria-label="Toggle View"
             aria-hidden="false"
             role="button"
           >
@@ -56,7 +55,6 @@ function App() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Hero />
       <Company
         employees={employees}
         viewMode={viewMode}
