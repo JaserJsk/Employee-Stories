@@ -9,8 +9,8 @@
 ## `Installed Packages`
 
 - [MUI] - [React UI components](https://mui.com/) This is to make a nice a looking site.
-- [AXIOS] - [React UI components](https://axios-http.com/docs/intro/) This is for making HTTP requests from a server.
-- [JEST] - [React UI components](https://jestjs.io/) This is to add unit tests for code functionality.
+- [AXIOS] - [Promise based HTTP client](https://axios-http.com/docs/intro/) This is for making HTTP requests from a server.
+- [JEST] - [JavaScript Testing Framework](https://jestjs.io/) This is to add unit tests for code functionality.
 
 ## `Project Assignment`
 
