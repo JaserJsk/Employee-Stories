@@ -20,6 +20,8 @@
 - It is also possible to display the list of employees in either a [Grid View] or a [List View].
 - I have also added 2 dropdowns that will allow us to filter the list of employees either by [Name] or [Office].
 - It is also possible to search for a specific employee.
+- To support color blindness, I have used high contrast colors across the website.
+- I have added [ARIA] tags to support Screen reader functionality.
 
 ### `yarn start`
 
