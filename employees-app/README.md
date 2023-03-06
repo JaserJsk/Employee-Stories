@@ -16,8 +16,8 @@
 
 - The assignment of this project was to create a website that displays a whole list of employees and their stories.
 - I have devided the list of employees with pagination to improve website performance.
-- Each employee photo is clickable related story information of that employee.
-- It is also possible to switch the list of employees in either a [Grid View] or a [List View].
+- Each employee photo is clickable and will display related information of that employee.
+- It is also possible to display the list of employees in either a [Grid View] or a [List View].
 - I have also added 2 dropdowns that will allow us to filter the list of employees either by [Name] or [Office].
 - It is also possible to search for a specific employee.
 
